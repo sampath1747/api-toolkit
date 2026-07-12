@@ -8,21 +8,43 @@ on:
     - cron: "30 3 * * *"
   push:
   workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   check-apis:
     runs-on: ubuntu-latest
     steps:
       - name: Get the code
         uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - name: Install dependencies
         run: pip install -r requirements.txt
+
       - name: Run API checks
         run: python -m api_toolkit run example_config.yaml --html report.html
-      - name: Save HTML report
+        continue-on-error: true
+
+      - name: Publish report to docs/ for GitHub Pages
+        run: |
+          mkdir -p docs
+          cp report.html docs/index.html
+
+      - name: Commit and push the updated dashboard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git diff --staged --quiet || git commit -m "Update live dashboard [skip ci]"
+          git push
+
+      - name: Save HTML report as artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
