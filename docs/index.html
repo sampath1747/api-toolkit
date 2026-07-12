@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>API Diagnostic Report</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, sans-serif; max-width: 900px; margin: 40px auto; background:#0f1115; color:#e6e6e6; }
+  h1 { color: #fff; }
+  .summary { font-size: 1.1em; margin-bottom: 30px; }
+  .endpoint { border-radius: 8px; padding: 16px 20px; margin-bottom: 18px; background:#1a1d24; border-left: 5px solid #444; }
+  .endpoint.pass { border-left-color: #2ecc71; }
+  .endpoint.fail { border-left-color: #e74c3c; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #2a2d35; font-size: 0.9em; }
+  code { color: #9cd; }
+</style>
+</head>
+<body>
+  <h1>REST API Diagnostic Report</h1>
+  <div class="summary">Passed <strong>4/4</strong> endpoints</div>
+  
+        <div class="endpoint pass">
+          <h3>✅ PASS — Amazon.com - Homepage uptime</h3>
+          <p><code>GET https://www.amazon.com</code>
+             — HTTP 200 — 115.73ms</p>
+          <table>
+            <tr><th>Check</th><th>Result</th><th>Detail</th></tr>
+            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>116ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Not a JSON response, skipped</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>No CORS headers found (may be fine for server-to-server)</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 183 days</td></tr>
+          </table>
+        </div>
+        
+        <div class="endpoint pass">
+          <h3>✅ PASS — AWS Status Feed</h3>
+          <p><code>GET https://status.aws.amazon.com/rss/all.rss</code>
+             — HTTP 200 — 133.45ms</p>
+          <table>
+            <tr><th>Check</th><th>Result</th><th>Detail</th></tr>
+            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>133ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Not a JSON response, skipped</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>CORS headers present</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 71 days</td></tr>
+          </table>
+        </div>
+        
+        <div class="endpoint pass">
+          <h3>✅ PASS — Open-Meteo Weather API</h3>
+          <p><code>GET https://api.open-meteo.com/v1/forecast?latitude=17.38&longitude=78.48&current_weather=true</code>
+             — HTTP 200 — 422.05ms</p>
+          <table>
+            <tr><th>Check</th><th>Result</th><th>Detail</th></tr>
+            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>422ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Valid JSON body</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>No CORS headers found (may be fine for server-to-server)</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 38 days</td></tr>
+          </table>
+        </div>
+        
+        <div class="endpoint pass">
+          <h3>✅ PASS — Random Joke API</h3>
+          <p><code>GET https://official-joke-api.appspot.com/random_joke</code>
+             — HTTP 200 — 123.2ms</p>
+          <table>
+            <tr><th>Check</th><th>Result</th><th>Detail</th></tr>
+            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>123ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Valid JSON body</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>CORS headers present</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 63 days</td></tr>
+          </table>
+        </div>
+        
+</body>
+</html>
