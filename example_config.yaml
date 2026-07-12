@@ -1,0 +1,27 @@
+global_timeout: 10
+
+endpoints:
+  - name: JSONPlaceholder - Get Post
+    url: https://jsonplaceholder.typicode.com/posts/1
+    method: GET
+    expected_status: 200
+    response_time_threshold_ms: 1500
+    schema:
+      type: object
+      required: [id, title, body, userId]
+      properties:
+        id: { type: integer }
+        title: { type: string }
+
+  - name: JSONPlaceholder - Nonexistent
+    url: https://jsonplaceholder.typicode.com/posts/999999
+    method: GET
+    expected_status: 404
+
+  - name: HTTPBin - Auth check
+    url: https://httpbin.org/bearer
+    method: GET
+    headers:
+      Authorization: "Bearer faketoken123"
+    expected_status: 200
+    check_auth_enforcement: true
