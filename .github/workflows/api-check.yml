@@ -1,33 +1,27 @@
 name: API Health Check
-
 # When this runs:
-# 1. Automatically every 30 minutes
+# 1. Automatically once a day at 9:00 AM IST
 # 2. Automatically whenever you push changes to the repo
 # 3. Manually, anytime, via the "Run workflow" button on GitHub
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "30 3 * * *"
   push:
   workflow_dispatch:
-
 jobs:
   check-apis:
     runs-on: ubuntu-latest
     steps:
       - name: Get the code
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Install dependencies
         run: pip install -r requirements.txt
-
       - name: Run API checks
         run: python -m api_toolkit run example_config.yaml --html report.html
-
       - name: Save HTML report
         if: always()
         uses: actions/upload-artifact@v4
