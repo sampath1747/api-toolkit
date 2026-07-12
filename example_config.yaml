@@ -1,12 +1,10 @@
 global_timeout: 10
-
 endpoints:
   - name: GitHub API - Zen quote
     url: https://api.github.com/zen
     method: GET
-    expected_status: 200
+    expected_status: 999
     response_time_threshold_ms: 2000
-
   - name: GitHub API - Octocat info
     url: https://api.github.com/users/octocat
     method: GET
