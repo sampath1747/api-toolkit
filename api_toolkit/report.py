@@ -1,11 +1,16 @@
 """Terminal (rich) and HTML report generation."""
 
+from datetime import datetime, timezone
+
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 from rich import box
 
 console = Console()
+
+# Set this to your repo URL so every generated report links back to the source.
+GITHUB_REPO_URL = "https://github.com/sampath1747/api-toolkit"
 
 
 def print_terminal_report(reports: list):
@@ -66,6 +71,7 @@ def generate_html_report(reports: list, output_path: str):
 
     total = len(reports)
     passed = sum(1 for r in reports if r.passed)
+    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     html = f"""<!DOCTYPE html>
 <html>
@@ -74,7 +80,11 @@ def generate_html_report(reports: list, output_path: str):
 <title>API Diagnostic Report</title>
 <style>
   body {{ font-family: -apple-system, Segoe UI, sans-serif; max-width: 900px; margin: 40px auto; background:#0f1115; color:#e6e6e6; }}
-  h1 {{ color: #fff; }}
+  h1 {{ color: #fff; margin-bottom: 4px; }}
+  .topbar {{ display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }}
+  .topbar a {{ color: #6cc4ff; text-decoration: none; font-size: 0.95em; }}
+  .topbar a:hover {{ text-decoration: underline; }}
+  .timestamp {{ color: #888; font-size: 0.85em; margin-bottom: 24px; }}
   .summary {{ font-size: 1.1em; margin-bottom: 30px; }}
   .endpoint {{ border-radius: 8px; padding: 16px 20px; margin-bottom: 18px; background:#1a1d24; border-left: 5px solid #444; }}
   .endpoint.pass {{ border-left-color: #2ecc71; }}
@@ -85,7 +95,11 @@ def generate_html_report(reports: list, output_path: str):
 </style>
 </head>
 <body>
-  <h1>REST API Diagnostic Report</h1>
+  <div class="topbar">
+    <h1>REST API Diagnostic Report</h1>
+    <a href="{GITHUB_REPO_URL}" target="_blank">View source on GitHub &rarr;</a>
+  </div>
+  <div class="timestamp">Last updated: {generated_at} &middot; runs automatically via GitHub Actions</div>
   <div class="summary">Passed <strong>{passed}/{total}</strong> endpoints</div>
   {"".join(rows)}
 </body>
