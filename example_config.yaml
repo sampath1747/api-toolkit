@@ -3,7 +3,7 @@ endpoints:
   - name: GitHub API - Zen quote
     url: https://api.github.com/zen
     method: GET
-    expected_status: 999
+    expected_status: 200
     response_time_threshold_ms: 2000
   - name: GitHub API - Octocat info
     url: https://api.github.com/users/octocat
