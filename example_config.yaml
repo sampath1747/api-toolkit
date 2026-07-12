@@ -1,12 +1,26 @@
 global_timeout: 10
+
 endpoints:
-  - name: GitHub API - Zen quote
-    url: https://api.github.com/zen
+  - name: Amazon.com - Homepage uptime
+    url: https://www.amazon.com
     method: GET
     expected_status: 200
-    response_time_threshold_ms: 2000
-  - name: GitHub API - Octocat info
-    url: https://api.github.com/users/octocat
+    response_time_threshold_ms: 3000
+
+  - name: AWS Status Feed
+    url: https://status.aws.amazon.com/rss/all.rss
     method: GET
     expected_status: 200
-    response_time_threshold_ms: 2000
+    response_time_threshold_ms: 3000
+
+  - name: Open-Meteo Weather API
+    url: https://api.open-meteo.com/v1/forecast?latitude=17.38&longitude=78.48&current_weather=true
+    method: GET
+    expected_status: 200
+    response_time_threshold_ms: 3000
+
+  - name: Random Joke API
+    url: https://official-joke-api.appspot.com/random_joke
+    method: GET
+    expected_status: 200
+    response_time_threshold_ms: 3000
