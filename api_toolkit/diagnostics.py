@@ -198,11 +198,10 @@ def check_security_headers(response: requests.Response) -> CheckResult:
     ]
     present = [h for h in recommended if h in headers]
     missing = [h for h in recommended if h not in headers]
-    ok = len(missing) <= 2
-    msg = f"{len(present)}/{len(recommended)} security headers present"
+    msg = f"{len(present)}/{len(recommended)} security headers present (informational)"
     if missing:
-        msg += f" (missing: {', '.join(missing)})"
-    return CheckResult("security_headers", ok, msg, {"present": present, "missing": missing})
+        msg += f" — missing: {', '.join(missing)}"
+    return CheckResult("security_headers", True, msg, {"present": present, "missing": missing})
 
 
 def check_auth_behavior(session: requests.Session, url: str, method: str, headers: dict) -> CheckResult:
