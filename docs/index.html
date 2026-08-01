@@ -24,46 +24,46 @@
     <h1>REST API Diagnostic Report</h1>
     <a href="https://github.com/sampath1747/api-toolkit" target="_blank">View source on GitHub &rarr;</a>
   </div>
-  <div class="timestamp">Last updated: 2026-07-31 06:30 UTC &middot; runs automatically via GitHub Actions</div>
+  <div class="timestamp">Last updated: 2026-08-01 06:15 UTC &middot; runs automatically via GitHub Actions</div>
   <div class="summary">Passed <strong>3/4</strong> endpoints</div>
   
         <div class="endpoint fail">
           <h3>❌ FAIL — Amazon.com - Homepage uptime</h3>
           <p><code>GET https://www.amazon.com</code>
-             — HTTP 503 — 107.02ms</p>
+             — HTTP 503 — 128.98ms</p>
           <table>
             <tr><th>Check</th><th>Result</th><th>Detail</th></tr>
-            <tr><td>status_code</td><td style='color:red'>FAIL</td><td>Expected [200], got 503</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>107ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Not a JSON response, skipped</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>No CORS headers found (may be fine for server-to-server)</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>1/4 security headers present (informational) — missing: X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 164 days</td></tr>
+            <tr><td>status_code</td><td style='color:red'>FAIL</td><td>Expected [200], got 503</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>129ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Not a JSON response, skipped</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>No CORS headers found (may be fine for server-to-server)</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>1/4 security headers present (informational) — missing: X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 163 days</td></tr>
           </table>
         </div>
         
         <div class="endpoint pass">
           <h3>✅ PASS — AWS Status Feed</h3>
           <p><code>GET https://status.aws.amazon.com/rss/all.rss</code>
-             — HTTP 200 — 374.18ms</p>
+             — HTTP 200 — 330.17ms</p>
           <table>
             <tr><th>Check</th><th>Result</th><th>Detail</th></tr>
-            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>374ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Not a JSON response, skipped</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>CORS headers present</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 190 days</td></tr>
+            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>330ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Not a JSON response, skipped</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>CORS headers present</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 189 days</td></tr>
           </table>
         </div>
         
         <div class="endpoint pass">
           <h3>✅ PASS — Open-Meteo Weather API</h3>
           <p><code>GET https://api.open-meteo.com/v1/forecast?latitude=17.38&longitude=78.48&current_weather=true</code>
-             — HTTP 200 — 495.39ms</p>
+             — HTTP 200 — 634.57ms</p>
           <table>
             <tr><th>Check</th><th>Result</th><th>Detail</th></tr>
-            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>495ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Valid JSON body</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>No CORS headers found (may be fine for server-to-server)</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 79 days</td></tr>
+            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>635ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Valid JSON body</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>No CORS headers found (may be fine for server-to-server)</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 78 days</td></tr>
           </table>
         </div>
         
         <div class="endpoint pass">
           <h3>✅ PASS — Random Joke API</h3>
           <p><code>GET https://official-joke-api.appspot.com/random_joke</code>
-             — HTTP 200 — 291.05ms</p>
+             — HTTP 200 — 79.6ms</p>
           <table>
             <tr><th>Check</th><th>Result</th><th>Detail</th></tr>
-            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>291ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Valid JSON body</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>CORS headers present</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 52 days</td></tr>
+            <tr><td>status_code</td><td style='color:green'>OK</td><td>Expected [200], got 200</td></tr><tr><td>response_time</td><td style='color:green'>OK</td><td>80ms (threshold 3000ms)</td></tr><tr><td>json_valid</td><td style='color:green'>OK</td><td>Valid JSON body</td></tr><tr><td>rate_limit</td><td style='color:green'>OK</td><td>No rate limiting detected</td></tr><tr><td>cors</td><td style='color:green'>OK</td><td>CORS headers present</td></tr><tr><td>security_headers</td><td style='color:green'>OK</td><td>0/4 security headers present (informational) — missing: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy</td></tr><tr><td>ssl_certificate</td><td style='color:green'>OK</td><td>Valid, expires in 51 days</td></tr>
           </table>
         </div>
         
